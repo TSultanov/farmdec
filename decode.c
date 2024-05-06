@@ -351,7 +351,7 @@ static u64 ror(u64 x, uint n, uint len) {
 	u64 raw = ((x >> n) | (x << (len - n)));
 	if (len == 64)
 		return raw;
-	return raw & ((1uL<<len) - 1); // truncate left side to len bits
+	return raw & ((1uLL<<len) - 1); // truncate left side to len bits
 }
 
 // Implementation of the A64 pseudocode function DecodeBitMasks (pp. 1683-1684).
